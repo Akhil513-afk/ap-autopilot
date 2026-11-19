@@ -15,9 +15,19 @@ import sys
 import tempfile
 from pathlib import Path
 
-from huggingface_hub import HfApi
+import os
 
 ROOT = Path(__file__).resolve().parent.parent
+
+# Allow the token to come from .env (HF_TOKEN=...) instead of an interactive `hf auth login`.
+_env = ROOT / ".env"
+if _env.is_file():
+    for _line in _env.read_text().splitlines():
+        _k, _, _v = _line.strip().partition("=")
+        if _k.strip() == "HF_TOKEN" and _v.strip() and "HF_TOKEN" not in os.environ:
+            os.environ["HF_TOKEN"] = _v.strip().strip('"').strip("'")
+
+from huggingface_hub import HfApi  # noqa: E402  (after HF_TOKEN is set)
 SPACE_HEADER = """---
 title: AP Autopilot
 emoji: 🧾
