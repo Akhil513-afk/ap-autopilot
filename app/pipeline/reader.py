@@ -5,6 +5,7 @@ or is a scan that needs OCR, and produces the plain text used by the parser."""
 from __future__ import annotations
 
 import hashlib
+import os
 from dataclasses import dataclass, field
 
 import pdfplumber
@@ -68,15 +69,27 @@ def intake(data: bytes, filename: str) -> dict:
             "filename": filename}
 
 
+OCR_DPI = int(os.environ.get("OCR_DPI", "300"))
+
+
 def _ocr_page(page) -> tuple[str, float]:
-    pix = page.get_pixmap(dpi=300, colorspace=pymupdf.csGRAY)
+    pix = page.get_pixmap(dpi=OCR_DPI, colorspace=pymupdf.csGRAY)
     img = Image.frombytes("L", (pix.width, pix.height), pix.samples)
     img = img.filter(ImageFilter.MedianFilter(3))       # remove scanner speckle
     img = ImageOps.autocontrast(img)
     img = img.point(lambda v: 255 if v > 170 else 0)    # binarise
+    # One Tesseract pass gives both the words (with positions) and their confidences;
+    # the text is rebuilt line by line from that same pass instead of running OCR twice.
     data = pytesseract.image_to_data(img, config="--psm 6", output_type=pytesseract.Output.DICT)
-    confs = [float(c) for c, t in zip(data["conf"], data["text"]) if t.strip() and float(c) >= 0]
-    text = pytesseract.image_to_string(img, config="--psm 6")
+    lines: dict[tuple, list[str]] = {}
+    confs = []
+    for i, word in enumerate(data["text"]):
+        if not word.strip():
+            continue
+        lines.setdefault((data["block_num"][i], data["par_num"][i], data["line_num"][i]), []).append(word)
+        if float(data["conf"][i]) >= 0:
+            confs.append(float(data["conf"][i]))
+    text = "\n".join(" ".join(ws) for _, ws in sorted(lines.items()))
     return text, (sum(confs) / len(confs)) if confs else 0.0
 
 
