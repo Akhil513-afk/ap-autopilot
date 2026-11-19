@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="AP Autopilot - automated invoice processing from PDF to an explainable approve / review / reject decision.">
+<meta name="theme-color" content="#0b1220">
+<title>AP Autopilot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="/static/styles.css?v=4">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%232563eb'/><path d='M9 17l5 5 9-11' stroke='white' stroke-width='3.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="shell">
+  <aside class="sidebar" aria-label="Primary">
+    <a class="brand" href="#/" aria-label="AP Autopilot home">
+      <span class="logo"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>
+      <span class="brand-text"><span class="brand-name">AP Autopilot</span></span>
+    </a>
+        <nav class="nav" id="nav"></nav>
+    <div class="side-foot">
+      <div id="engine-status" class="engine" aria-live="polite"></div>
+      <div class="side-meta"><span id="version"></span><button class="link-btn" id="reset-btn" hidden title="Reset demo data"></button></div>
+    </div>
+  </aside>
+  <div class="main">
+    <header class="topbar">
+      <div class="crumbs" id="crumbs"></div>
+      <div class="top-actions">
+        <form class="search" id="global-search" role="search">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="search" id="global-q" placeholder="Search invoices…" aria-label="Search invoices">
+        </form>
+        <a class="btn primary" href="#/new" id="top-upload"></a>
+      </div>
+    </header>
+    <main class="content" id="main" tabindex="-1"></main>
+  </div>
+</div>
+<div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+<div id="modal-root"></div>
+<script src="/static/app.js?v=4"></script>
+</body>
+</html>

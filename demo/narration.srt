@@ -1,0 +1,67 @@
+1
+00:00:01,300 --> 00:00:15,300
+Hi, I'm [your name]. This is AP Autopilot, my solution to problem statement one: invoice processing, from PDF to decision. Every invoice goes through eight stages, from intake to a final decision.
+
+2
+00:00:15,500 --> 00:00:25,100
+Gemini reads the document; fixed rules decide: approve, review, or reject. I designed four edge cases, and I'll run each one live.
+
+3
+00:00:25,300 --> 00:00:34,900
+Drop in any PDF, digital or scanned, or pick a prepared scenario: two happy paths, four edge cases, six exceptions.
+
+4
+00:00:35,100 --> 00:00:49,500
+Let's start with a clean invoice from Apex Office Supplies. Watch the pipeline on the left: it checks the file, reads the text layer, and extracts every field.
+
+5
+00:00:49,700 --> 00:01:04,700
+Approved: all twenty-nine checks passed, and the next step is routed to the AP supervisor, with payment scheduled on Net 30. Every field shows a confidence score and the text it came from.
+
+6
+00:01:04,900 --> 00:01:16,800
+In the PO match tab, every invoice line maps to the purchase order. Quantity, price and tax are all within tolerance: a clean two-way match.
+
+7
+00:01:17,000 --> 00:01:28,800
+Second happy path: Northwind bills one PO in three monthly instalments. The PO number is written oddly and the dates are day-first, but it still resolves.
+
+8
+00:01:29,000 --> 00:01:41,200
+It matches against what's left on the PO, not the full value. This is invoice two of three, so it's approved, and the PO is now sixty-seven percent used.
+
+9
+00:01:41,400 --> 00:02:04,100
+Edge case one: a scanned invoice with no PO number at all. There's no text layer, so it runs OCR, at ninety-three percent confidence, and then it has to work out which purchase order this belongs to. It goes to manual review.
+
+10
+00:02:04,300 --> 00:02:12,000
+Here's the original scan beside the text the system read.
+
+11
+00:02:12,200 --> 00:02:23,200
+It scored Cobalt's open POs: a hundred percent match versus sixteen. Strong, but an inferred PO still needs the buyer's confirmation.
+
+12
+00:02:23,400 --> 00:02:46,500
+Edge case two is about duplicates. Apex re-sent an invoice we already paid, as a payment reminder, with a new date and the number re-formatted with a leading zero. Normalised, it's the same invoice, so it's rejected before it can be paid twice.
+
+13
+00:02:46,700 --> 00:03:12,500
+But the opposite mistake is just as costly. Summit bills the same four thousand five hundred dollars every month, so a naive check would block it. The system sees a different service period, recognises recurring billing, and approves it.
+
+14
+00:03:12,700 --> 00:03:45,800
+Edge case three: Northwind's final instalment. The agreed rate is sixteen thousand a month, but this invoice says nineteen and a half thousand, with a surcharge bundled in. The bar shows earlier invoices in grey, this one in amber, and the overrun in red. That's a twenty-one point nine percent price variance, so it goes to the buyer, by name, for a PO amendment or a corrected invoice.
+
+15
+00:03:46,000 --> 00:04:15,200
+Edge case four is the expensive one: vendor impersonation. The PO and the amounts are perfect. But it says Limited instead of Inc, the tax ID digits are swapped, the email domain is a look-alike, and it asks us to pay a new bank account. Two or more identity mismatches mean a fraud hold: don't pay, and call the vendor on the number we already have on file.
+
+16
+00:04:15,400 --> 00:04:32,800
+Back to the scanned invoice in the review queue. The buyer has confirmed the PO, so I add a note and approve. My name, the decision and the reason all go into the audit trail.
+
+17
+00:04:33,000 --> 00:04:50,600
+Finally, the dashboard: every invoice, its decision and why, with the value cleared and the value blocked. Gemini reads, rules decide, and every outcome can be explained. Thanks for watching.

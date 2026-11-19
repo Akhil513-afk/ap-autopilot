@@ -1,0 +1,125 @@
+[
+  {
+    "po_number": "PO-2026-0412",
+    "vendor_id": "V-1001",
+    "issue_date": "2026-10-28",
+    "currency": "USD",
+    "status": "open",
+    "buyer": "M. Chen (Workplace Ops)",
+    "cost_center": "CC-210 Facilities",
+    "allows_partial_invoicing": false,
+    "tax_rate": 0.0825,
+    "lines": [
+      {"line": 1, "sku": "PAP-A4-CS", "description": "A4 copy paper, 80gsm (case of 5 reams)", "qty": 40, "unit_price": 42.50},
+      {"line": 2, "sku": "TNR-58A", "description": "Toner cartridge HP 58A black", "qty": 12, "unit_price": 89.00},
+      {"line": 3, "sku": "CHR-ERG-2", "description": "Ergonomic office chair, mesh back", "qty": 6, "unit_price": 245.00},
+      {"line": 4, "sku": "MKR-WB-12", "description": "Whiteboard markers (pack of 12)", "qty": 25, "unit_price": 14.20}
+    ]
+  },
+  {
+    "po_number": "PO-2026-0366",
+    "vendor_id": "V-1001",
+    "issue_date": "2026-09-30",
+    "currency": "USD",
+    "status": "fully_invoiced",
+    "buyer": "M. Chen (Workplace Ops)",
+    "cost_center": "CC-210 Facilities",
+    "allows_partial_invoicing": false,
+    "tax_rate": 0.0825,
+    "lines": [
+      {"line": 1, "sku": "PAP-A4-CS", "description": "A4 copy paper, 80gsm (case of 5 reams)", "qty": 30, "unit_price": 42.50},
+      {"line": 2, "sku": "STP-HD", "description": "Heavy duty stapler", "qty": 10, "unit_price": 34.90},
+      {"line": 3, "sku": "ORG-DSK", "description": "Desk organiser, 5 compartment", "qty": 20, "unit_price": 28.75}
+    ]
+  },
+  {
+    "po_number": "PO-2026-0398",
+    "vendor_id": "V-1002",
+    "issue_date": "2026-09-25",
+    "currency": "USD",
+    "status": "open",
+    "buyer": "R. Alvarez (Supply Chain)",
+    "cost_center": "CC-330 Distribution",
+    "allows_partial_invoicing": true,
+    "tax_rate": 0.0,
+    "notes": "Q4 dedicated freight lane, billed monthly (Oct, Nov, Dec).",
+    "lines": [
+      {"line": 1, "sku": "FRT-DED-M", "description": "Dedicated freight services - monthly lane fee", "qty": 3, "unit_price": 16000.00, "uom": "month"}
+    ]
+  },
+  {
+    "po_number": "PO-2026-0431",
+    "vendor_id": "V-1003",
+    "issue_date": "2026-10-05",
+    "currency": "USD",
+    "status": "open",
+    "buyer": "S. Patel (IT)",
+    "cost_center": "CC-120 IT",
+    "allows_partial_invoicing": true,
+    "tax_rate": 0.0825,
+    "lines": [
+      {"line": 1, "sku": "SVC-ERP-M2", "description": "ERP integration services - Milestone 2 (UAT sign-off)", "qty": 1, "unit_price": 18500.00},
+      {"line": 2, "sku": "LIC-MW-ANN", "description": "Middleware licence - annual subscription", "qty": 1, "unit_price": 3200.00}
+    ]
+  },
+  {
+    "po_number": "PO-2026-0377",
+    "vendor_id": "V-1004",
+    "issue_date": "2026-10-14",
+    "currency": "USD",
+    "status": "open",
+    "buyer": "D. Okafor (Plant Maintenance)",
+    "cost_center": "CC-410 Plant",
+    "allows_partial_invoicing": true,
+    "tax_rate": 0.0825,
+    "lines": [
+      {"line": 1, "sku": "HOS-075", "description": "Hydraulic hose assembly 3/4 in", "qty": 20, "unit_price": 38.75},
+      {"line": 2, "sku": "BRG-6205", "description": "Bearing 6205-2RS sealed", "qty": 50, "unit_price": 6.40},
+      {"line": 3, "sku": "VLV-52-PN", "description": "Pneumatic valve 5/2 way", "qty": 8, "unit_price": 112.00}
+    ]
+  },
+  {
+    "po_number": "PO-2026-0420",
+    "vendor_id": "V-1004",
+    "issue_date": "2026-11-02",
+    "currency": "USD",
+    "status": "open",
+    "buyer": "D. Okafor (Plant Maintenance)",
+    "cost_center": "CC-410 Plant",
+    "allows_partial_invoicing": true,
+    "tax_rate": 0.0825,
+    "lines": [
+      {"line": 1, "sku": "CNV-BLT-12", "description": "Conveyor belt 12 in x 40 ft", "qty": 2, "unit_price": 1450.00},
+      {"line": 2, "sku": "MTR-GR-5", "description": "Gear motor 5 HP", "qty": 1, "unit_price": 2180.00}
+    ]
+  },
+  {
+    "po_number": "PO-2026-0350",
+    "vendor_id": "V-1005",
+    "issue_date": "2026-08-20",
+    "currency": "USD",
+    "status": "open",
+    "buyer": "M. Chen (Workplace Ops)",
+    "cost_center": "CC-210 Facilities",
+    "allows_partial_invoicing": true,
+    "tax_rate": 0.0,
+    "notes": "Blanket PO: janitorial services Sep 2026 - Aug 2027, billed monthly.",
+    "lines": [
+      {"line": 1, "sku": "SVC-JAN-M", "description": "Janitorial services - monthly", "qty": 12, "unit_price": 4500.00, "uom": "month"}
+    ]
+  },
+  {
+    "po_number": "PO-2026-0405",
+    "vendor_id": "V-1006",
+    "issue_date": "2026-09-15",
+    "currency": "USD",
+    "status": "open",
+    "buyer": "L. Brooks (Finance)",
+    "cost_center": "CC-010 Finance",
+    "allows_partial_invoicing": false,
+    "tax_rate": 0.0,
+    "lines": [
+      {"line": 1, "sku": "SVC-ADV", "description": "Process advisory engagement - fixed fee", "qty": 1, "unit_price": 12000.00}
+    ]
+  }
+]

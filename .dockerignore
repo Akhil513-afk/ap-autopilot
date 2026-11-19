@@ -1,0 +1,10 @@
+.venv
+storage
+tests
+__pycache__
+*.pyc
+.claude
+.DS_Store
+.env
+demo
+scripts/record_demo.py

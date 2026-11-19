@@ -1,0 +1,14 @@
+# demo media and recordings (large, generated)
+*.pyc
+.DS_Store
+.claude/
+.env
+.pytest_cache/
+.venv/
+__pycache__/
+demo/*.mp4
+demo/final-demo.mp4
+demo/raw/
+demo/raw_synced/
+demo/timeline*.json
+storage/

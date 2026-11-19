@@ -1,0 +1,18 @@
+{
+  "company": "Meridian Home Goods Inc.",
+  "base_currency": "USD",
+  "amount_tolerance_pct": 0.02,
+  "amount_tolerance_abs": 100.0,
+  "unit_price_tolerance_pct": 0.02,
+  "rounding_tolerance_abs": 0.05,
+  "max_invoice_age_days": 180,
+  "max_future_date_days": 3,
+  "duplicate_fuzzy_window_days": 60,
+  "inferred_po_min_score": 0.70,
+  "low_confidence_threshold": 0.60,
+  "approval_routing": [
+    {"max_amount": 10000, "approver": "AP Supervisor"},
+    {"max_amount": 50000, "approver": "Finance Manager"},
+    {"max_amount": null, "approver": "Controller"}
+  ]
+}

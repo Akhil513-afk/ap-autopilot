@@ -1,0 +1,22 @@
+{
+ "intro": 0.0,
+ "rules": 16.16,
+ "edges": 21.78,
+ "upload": 26.88,
+ "happy1": 36.38,
+ "happy1_decision": 51.46,
+ "happy1_po": 64.46,
+ "happy2": 78.15,
+ "happy2_po": 90.41,
+ "edge1": 102.23,
+ "edge1_decision": 119.43,
+ "edge1_doc": 122.55,
+ "edge1_po": 132.78,
+ "edge2a": 143.9,
+ "edge2b": 165.98,
+ "edge3": 189.18,
+ "edge4": 225.13,
+ "review": 255.19,
+ "dashboard": 273.01,
+ "end": 290.97
+}

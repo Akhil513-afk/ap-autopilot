@@ -1,0 +1,10 @@
+[
+  {"vendor_id": "V-1001", "invoice_number": "AOS-47950", "invoice_date": "2026-10-09", "po_number": "PO-2026-0366", "currency": "USD", "subtotal": 2199.00, "tax": 181.42, "total": 2380.42, "status": "paid", "service_period": null,
+   "lines": [{"description": "A4 copy paper, 80gsm (case of 5 reams)", "qty": 30, "unit_price": 42.50}, {"description": "Heavy duty stapler", "qty": 10, "unit_price": 34.90}, {"description": "Desk organiser, 5 compartment", "qty": 20, "unit_price": 28.75}]},
+  {"vendor_id": "V-1002", "invoice_number": "NWL-INV-7781", "invoice_date": "2026-10-31", "po_number": "PO-2026-0398", "currency": "USD", "subtotal": 16000.00, "tax": 0.0, "total": 16000.00, "status": "paid", "service_period": "2026-10-01 to 2026-10-31",
+   "lines": [{"description": "Dedicated freight services - October 2026", "qty": 1, "unit_price": 16000.00}]},
+  {"vendor_id": "V-1005", "invoice_number": "SFM-2026-09", "invoice_date": "2026-09-30", "po_number": "PO-2026-0350", "currency": "USD", "subtotal": 4500.00, "tax": 0.0, "total": 4500.00, "status": "paid", "service_period": "2026-09-01 to 2026-09-30",
+   "lines": [{"description": "Janitorial services - September 2026", "qty": 1, "unit_price": 4500.00}]},
+  {"vendor_id": "V-1005", "invoice_number": "SFM-2026-10", "invoice_date": "2026-10-31", "po_number": "PO-2026-0350", "currency": "USD", "subtotal": 4500.00, "tax": 0.0, "total": 4500.00, "status": "approved", "service_period": "2026-10-01 to 2026-10-31",
+   "lines": [{"description": "Janitorial services - October 2026", "qty": 1, "unit_price": 4500.00}]}
+]
