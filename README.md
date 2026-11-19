@@ -2,6 +2,8 @@
 
 Zamp AI Solutions Analyst case study, **PS-1 (Finance / Accounts Payable)**.
 
+**Live app:** https://ap-autopilot-6lpu.onrender.com. It's on Render's free plan, so the first visit after a quiet spell can take up to a minute to wake.
+
 You give it a vendor invoice PDF. It reads the invoice (digital or scanned), extracts the data, validates it, checks the vendor against the vendor master, finds and matches the purchase order, checks for duplicates, and returns **Approve / Manual review / Reject**. Every decision comes with the reasons, the checks that passed and failed, and the next action, each assigned to a named owner. You can watch every stage run live, and every run is kept with a full audit trail.
 
 ---
