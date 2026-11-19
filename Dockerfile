@@ -17,7 +17,8 @@ COPY data ./data
 COPY samples ./samples
 COPY static ./static
 
-RUN useradd --create-home --uid 10001 appuser && mkdir -p /data && chown appuser /data
+# uid 1000 matches the user Hugging Face Spaces runs containers as
+RUN useradd --create-home --uid 1000 appuser && mkdir -p /data && chown appuser /data && chmod 777 /data
 USER appuser
 VOLUME ["/data"]
 EXPOSE 8000

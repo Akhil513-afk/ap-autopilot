@@ -55,14 +55,16 @@ SAMPLE_INFO = {
 
 CSP = ("default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; "
        "font-src 'self' https://fonts.gstatic.com; script-src 'self'; "
-       "frame-src 'self'; object-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'")
+       "frame-src 'self'; object-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'self'; "
+       f"frame-ancestors {config.FRAME_ANCESTORS}")
 
 
 @app.middleware("http")
 async def headers(request: Request, call_next):
     resp = await call_next(request)
     resp.headers.setdefault("X-Content-Type-Options", "nosniff")
-    resp.headers.setdefault("X-Frame-Options", "SAMEORIGIN")
+    if config.FRAME_ANCESTORS.strip() == "'self'":  # X-Frame-Options can't express an allow-list
+        resp.headers.setdefault("X-Frame-Options", "SAMEORIGIN")
     resp.headers.setdefault("Referrer-Policy", "same-origin")
     resp.headers.setdefault("Permissions-Policy", "camera=(), microphone=(), geolocation=()")
     p = request.url.path

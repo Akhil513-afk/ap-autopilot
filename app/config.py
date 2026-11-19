@@ -36,6 +36,8 @@ WORKERS = max(1, int(os.environ.get("WORKERS", "3")))
 MAX_UPLOAD_MB = int(os.environ.get("MAX_UPLOAD_MB", "20"))
 # The demo reset endpoint wipes all runs - disable it in shared environments with ALLOW_RESET=0.
 ALLOW_RESET = os.environ.get("ALLOW_RESET", "1") != "0"
+# Sites allowed to embed the app in a frame (Hugging Face Spaces shows apps inside huggingface.co).
+FRAME_ANCESTORS = os.environ.get("FRAME_ANCESTORS", "'self' https://huggingface.co https://*.hf.space")
 DB_PATH = Path(os.environ.get("DB_PATH", str(STORAGE / "ap.db")))
 
 # Seconds to pause between stages so a human can follow the live run view. 0 = full speed.
