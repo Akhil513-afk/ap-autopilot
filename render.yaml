@@ -1,0 +1,20 @@
+# Render Blueprint - https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: ap-autopilot
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false            # Render asks for this value when you create the service
+      - key: STAGE_PACING
+        value: "0.6"
+      - key: WORKERS
+        value: "2"             # free instance has 512 MB RAM
+      - key: ALLOW_RESET
+        value: "1"
+      - key: STORAGE_DIR
+        value: /data           # ephemeral on the free plan: runs reset when the service restarts

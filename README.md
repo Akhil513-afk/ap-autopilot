@@ -41,6 +41,16 @@ GEMINI_API_KEY=your-key-here
 
 **Demo reset:** **Reset demo** in the sidebar footer (or `POST /api/reset`) deletes all runs and puts the invoice ledger back to its seeded ERP history. It asks for confirmation first.
 
+### Deploy to Render (free)
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Akhil513-afk/ap-autopilot)
+
+`render.yaml` defines a free Docker web service. Render asks for `GEMINI_API_KEY` during setup; leave it blank to run on the rule-based engine.
+
+On the free plan:
+- The service sleeps after about 15 minutes idle, so the first visit takes 30–60 s.
+- Runs are kept on temporary storage and reset whenever the service restarts. The sample scenarios and **Reset demo** make that harmless.
+
 ### Deploy (Docker)
 
 ```bash
